@@ -407,3 +407,7 @@ a.citycard svg{width:18px;height:18px;color:var(--wood);flex:none}
 .ig-tile:hover img{transform:scale(1.07)}
 .ig-tile:hover::after{background:rgba(44,53,57,.22)}
 @media(max-width:900px){.ig-grid{grid-template-columns:repeat(3,1fr)}}
+/* force trust marquee to loop even under OS reduce-motion (boss request) */
+.trust-track{animation:trustloop 28s linear infinite!important;animation-duration:28s!important;animation-play-state:running!important}
+.trustbar:hover .trust-track{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.trust-track{animation:trustloop 28s linear infinite!important;animation-duration:28s!important}}
