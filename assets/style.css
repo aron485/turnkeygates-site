@@ -411,3 +411,6 @@ a.citycard svg{width:18px;height:18px;color:var(--wood);flex:none}
 .trust-track{animation:trustloop 28s linear infinite!important;animation-duration:28s!important;animation-play-state:running!important}
 .trustbar:hover .trust-track{animation-play-state:paused!important}
 @media (prefers-reduced-motion:reduce){.trust-track{animation:trustloop 28s linear infinite!important;animation-duration:28s!important}}
+/* center the section CTA button + clear it from the content above (esp. IG feed) */
+.sec-cta{display:flex!important;justify-content:center!important;align-items:center!important;margin-top:56px!important;text-align:center}
+#instagram .sec-cta{margin-top:60px!important}
