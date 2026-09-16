@@ -20,7 +20,6 @@ function revScroll(dir){var t=document.getElementById('revtrack');if(!t)return;v
     var href=(a.getAttribute('href')||'');
     var t=(a.textContent||'').toLowerCase().replace(/\s+/g,' ').trim();
     if(/free quote|free estimate|free consultation|get a quote|get a free/.test(t))return true;
-    if(/(^|\/)contact-us\/?$/.test(href))return true;
     if(href==='#hero-form')return true;
     return false;
   }
@@ -33,4 +32,24 @@ function revScroll(dir){var t=document.getElementById('revtrack');if(!t)return;v
     }
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wire);else wire();
+})();
+
+/* Mobile hamburger nav toggle */
+(function(){
+  var nav=document.querySelector('.nav');
+  if(!nav)return;
+  var burger=nav.querySelector('.nav-burger');
+  if(burger){
+    burger.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded',open?'true':'false');
+      var o=burger.querySelector('.ico-open'),c=burger.querySelector('.ico-close');
+      if(o&&c){o.style.display=open?'none':'block';c.style.display=open?'block':'none';}
+    });
+  }
+  nav.querySelectorAll('.nav-drop__t').forEach(function(t){
+    t.addEventListener('click',function(e){
+      if(window.matchMedia('(max-width:960px)').matches){e.preventDefault();t.parentElement.classList.toggle('open');}
+    });
+  });
 })();

@@ -51,16 +51,16 @@
   @media(max-width:600px){.topbar .tb-hide{display:none}}
 
   /* ---------- header/nav ---------- */
-  header.nav{position:sticky;top:0;z-index:100;background:rgba(250,247,241,.92);
-    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header.nav{position:sticky;top:0;z-index:100;background:rgba(44,53,57,.94);
+    backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.09)}
   .nav .wrap{display:flex;align-items:center;gap:28px;height:76px}
   .logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:21px;color:var(--slate);
     text-decoration:none;letter-spacing:-.01em}
   .logo img{height:64px;width:auto;display:block}
   .logo .mark{color:var(--wood-d)}
   .nav-links{display:flex;gap:22px;font-size:14.5px;font-weight:500;flex:1;justify-content:center;align-items:center}
-  .nav-links>a,.nav-drop__t{color:var(--ink);opacity:.8;text-decoration:none;transition:.2s;white-space:nowrap}
-  .nav-links>a:hover,.nav-drop:hover .nav-drop__t{opacity:1;color:var(--steel)}
+  .nav-links>a,.nav-drop__t{color:#cfd5d4;opacity:.9;text-decoration:none;transition:.2s;white-space:nowrap}
+  .nav-links>a:hover,.nav-drop:hover .nav-drop__t{opacity:1;color:#fff}
   .nav .btn{padding:11px 20px;font-size:14px}
   .nav-drop{position:relative}
   .nav-drop__t{display:inline-flex;align-items:center;gap:5px;cursor:pointer}
@@ -80,8 +80,8 @@
   .nav-menu--areas{display:grid;grid-template-columns:repeat(2,1fr);gap:0 8px;min-width:330px}
   .nav-cta{display:flex;align-items:center;gap:18px}
   .nav-cta__phone{display:flex;flex-direction:column;line-height:1.25;text-align:right}
-  .nav-cta__phone span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--wood-d);font-weight:800}
-  .nav-cta__phone a{color:var(--slate);text-decoration:none;font-size:15px;font-weight:800}
+  .nav-cta__phone span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:800}
+  .nav-cta__phone a{color:#fff;text-decoration:none;font-size:15px;font-weight:800}
   @media(max-width:1180px){.nav-cta__phone{display:none}}
   @media(max-width:960px){.nav-links{display:none}}
 
@@ -117,6 +117,7 @@
   /* form card */
   .hero-form{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 40px 80px -34px rgba(0,0,0,.6)}
   .hero-form .fbar{height:6px;background:linear-gradient(90deg,var(--wood-d),var(--wood-l))}
+  .hero-form__hd{padding:20px 26px 2px;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);text-align:center}
   .hero-form .fin{padding:26px 26px 24px}
   .hero-form h2{font-size:20px;color:var(--slate);margin:0;font-weight:800;letter-spacing:.02em;text-transform:uppercase}
   .hero-form .subbar{background:var(--slate);color:#fff;text-align:center;font-weight:700;font-size:13.5px;
@@ -416,9 +417,9 @@ a.citycard svg{width:18px;height:18px;color:var(--wood);flex:none}
 #instagram .sec-cta{margin-top:60px!important}
 
 /* ===== OPTIMIZATION PASS 2 (2026-09-09) — interior pages ===== */
-/* Embedded LC form: fixed to original card size, scrolls inside */
-.hero-form .lc-form{padding:0;background:#fff;height:600px;overflow-y:auto;-webkit-overflow-scrolling:touch}
-.hero-form .lc-form iframe{display:block;width:100%;min-height:600px;border:0;background:transparent}
+/* Embedded LC form: fixed card height, scrolls inside to reveal the full form (opt-ins, consent, submit) */
+.hero-form .lc-form{padding:0;background:#fff;height:640px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.hero-form .lc-form iframe{display:block;width:100%;min-height:1360px;border:0;background:transparent}
 /* Nav breathing room + more visible logo (no box/background) */
 .nav .wrap{height:auto;padding-top:18px;padding-bottom:18px}
 .logo img{filter:drop-shadow(0 1px 2px rgba(30,36,40,.4)) contrast(1.06)}
@@ -445,3 +446,61 @@ a.citycard svg{width:18px;height:18px;color:var(--wood);flex:none}
 .final::after{display:none!important}
 .final::before{content:""!important;position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none;opacity:.3!important;background:url(bg1.jpg) center/cover no-repeat!important;-webkit-mask-image:none!important;mask-image:none!important;transform-origin:center;animation:finalPan 18s ease-in-out infinite alternate!important}
 .final>.wrap{position:relative;z-index:3}
+
+/* ===== Per-page banner backgrounds (Task 3) — distinct image per inner page ===== */
+body.page-id-6 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-about.jpg)}
+body.page-id-7 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-blog.jpg)}
+body.page-id-8 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-contact.jpg)}
+body.page-id-9 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-doors.jpg)}
+body.page-id-10 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-faqs.jpg)}
+body.page-id-11 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-gallery.jpg)}
+body.page-id-12 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-gates.jpg)}
+body.page-id-14 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-areas.jpg)}
+body.page-id-15 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-testimonials.jpg)}
+body.page-id-16 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-team.jpg)}
+body.page-id-19 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-double.jpg)}
+body.page-id-20 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-fire-exit.jpg)}
+body.page-id-21 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-french.jpg)}
+body.page-id-22 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-patio.jpg)}
+body.page-id-23 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-security.jpg)}
+body.page-id-24 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-storm.jpg)}
+body.page-id-25 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-access.jpg)}
+body.page-id-26 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-electric.jpg)}
+body.page-id-27 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-swing.jpg)}
+body.page-id-28 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-city-baton-rouge.jpg)}
+body.page-id-29 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-city-covington.jpg)}
+body.page-id-30 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-city-gretna.jpg)}
+body.page-id-31 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-city-hammond.jpg)}
+body.page-id-32 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-city-harahan.jpg)}
+body.page-id-33 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-city-kenner.jpg)}
+body.page-id-34 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-city-laplace.jpg)}
+body.page-id-35 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-city-madisonville.jpg)}
+body.page-id-36 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-city-mandeville.jpg)}
+body.page-id-37 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-city-metairie.jpg)}
+body.page-id-38 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-city-river-ridge.jpg)}
+body.page-id-39 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-city-slidell.jpg)}
+body.page-id-40 .phero::before{background-image:linear-gradient(150deg,rgba(28,33,36,.92),rgba(34,42,45,.78)),url(/assets/banners/banner-city-st-rose.jpg)}
+
+/* ===== Mobile hamburger nav ===== */
+html,body{overflow-x:hidden}
+.nav-burger{display:none;background:none;border:0;cursor:pointer;padding:6px;color:#cfd5d4;line-height:0}
+.nav-burger svg{width:30px;height:30px;display:block}
+.nav-burger:hover{color:#fff}
+@media(max-width:960px){
+ .nav .wrap{flex-wrap:wrap;gap:14px;height:auto;padding-top:14px;padding-bottom:14px}
+ .logo{margin-right:auto}
+ .nav-burger{display:block;order:3}
+ .nav-cta{order:2}
+ .nav-links{order:5;flex:0 0 100%;width:100%;display:none;flex-direction:column;justify-content:flex-start;align-items:stretch;gap:0;margin:6px 0 2px;border-top:1px solid rgba(255,255,255,.14)}
+ .nav.open .nav-links{display:flex}
+ .nav-links>a,.nav-drop__t{width:100%;padding:13px 2px;border-bottom:1px solid rgba(255,255,255,.10);font-size:16px;white-space:normal;justify-content:space-between}
+ .nav-drop{position:static;width:100%}
+ .nav-menu{position:static!important;display:none;opacity:1!important;visibility:visible!important;transform:none!important;box-shadow:none;border:0;background:rgba(0,0,0,.16);min-width:0;width:100%;padding:4px 0 10px 12px;margin:0}
+ .nav-drop.open>.nav-menu{display:block}
+ .nav-menu--areas{grid-template-columns:1fr 1fr;min-width:0}
+ .nav-drop.open>.nav-menu--areas{display:grid}
+ .nav-menu a{padding:9px 4px;white-space:normal;color:#cfd5d4;opacity:.92}
+ .nav-menu a:hover{color:#fff;opacity:1}
+ .nav-col__h{display:block;margin-top:8px;color:var(--gold)}
+ .nav-drop.open .caret{transform:rotate(180deg)}
+}
