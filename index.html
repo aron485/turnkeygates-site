@@ -122,6 +122,12 @@
   .hero-form .fbar{height:6px;background:linear-gradient(90deg,var(--wood-d),var(--wood-l))}
   .hero-form__hd{padding:20px 26px 2px;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);text-align:center}
   .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.gallery-item{display:block;overflow:hidden;border-radius:14px;position:relative;aspect-ratio:1/1;box-shadow:0 6px 20px rgba(30,36,40,.12)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease}
+.gallery-item:hover img{transform:scale(1.07)}
+@media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.gallery-grid{gap:10px}}
   .tmember{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;text-align:center;box-shadow:0 24px 48px -38px rgba(44,53,57,.5)}
   @media(max-width:1100px){.team-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:900px){.team-grid{grid-template-columns:1fr}}
@@ -691,6 +697,24 @@
     <div class="tmember"><img decoding="async" src="assets/team/corey-gallagher.jpg" alt="Corey Gallagher" loading="lazy" style="width:150px;height:150px;object-fit:cover;border-radius:50%;margin:0 auto 16px;display:block"><h3 style="margin:0;font-family:'Sora',sans-serif;color:var(--slate)">Corey Gallagher</h3><p style="color:var(--muted);margin:6px 0 0;font-size:14px">TurnKey Gates Team</p></div>
   </div>
   <div class="sec-cta"><a class="btn btn--primary" href="the-team/">Meet the Full Team &rarr;</a></div>
+</div></section>
+
+
+<!-- ================= GALLERY / SAMPLE OF WORK ================= -->
+<section class="band band--sand" id="gallery"><div class="wrap">
+  <div class="center"><span class="eyebrow">Our Work</span><h2 class="sec-title">A Sample of Our Gate &amp; Door Projects</h2>
+  <p class="sec-sub">Real gates, doors, and automation we&#8217;ve designed and installed for homeowners across the New Orleans metro.</p></div>
+  <div class="gallery-grid">
+    <a class="gallery-item" href="gallery/"><img decoding="async" src="assets/gallery/proj-1.jpg" alt="Custom driveway gate installed by TurnKey Gates in New Orleans" loading="lazy"></a>
+    <a class="gallery-item" href="gallery/"><img decoding="async" src="assets/gallery/proj-2.jpg" alt="Swing gate project by TurnKey Gates" loading="lazy"></a>
+    <a class="gallery-item" href="gallery/"><img decoding="async" src="assets/gallery/proj-3.jpg" alt="Wrought iron gate installation, New Orleans metro" loading="lazy"></a>
+    <a class="gallery-item" href="gallery/"><img decoding="async" src="assets/gallery/proj-4.jpg" alt="Automatic sliding gate by TurnKey Gates" loading="lazy"></a>
+    <a class="gallery-item" href="gallery/"><img decoding="async" src="assets/gallery/proj-5.jpg" alt="Security door installation by TurnKey Gates" loading="lazy"></a>
+    <a class="gallery-item" href="gallery/"><img decoding="async" src="assets/gallery/proj-6.jpg" alt="Residential gate and fence project, New Orleans" loading="lazy"></a>
+    <a class="gallery-item" href="gallery/"><img decoding="async" src="assets/gallery/proj-7.jpg" alt="Estate entrance gate by TurnKey Gates" loading="lazy"></a>
+    <a class="gallery-item" href="gallery/"><img decoding="async" src="assets/gallery/proj-8.jpg" alt="Custom gate and door craftsmanship, New Orleans metro" loading="lazy"></a>
+  </div>
+  <div class="sec-cta"><a class="btn btn--primary" href="gallery/">View Full Gallery &rarr;</a></div>
 </div></section>
 
 
